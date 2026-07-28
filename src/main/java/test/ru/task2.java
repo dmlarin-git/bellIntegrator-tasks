@@ -20,12 +20,11 @@ public class task2 {
 
         // Поиск минимального по диагонали
         int N = arr.length;
-        int medN = N / 2 + 1;
-        int min = arr[0][N-1];
-        for (int i = 1; i < N; i++) {
-            if (i != medN - 1) { // если не пересечение диагоналей
-                if (min > arr[i][N-i-1]) {
-                    min = arr[i][N-i-1];
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < N; i++) {
+            if (i != N - 1 - i) { // если не пересечение диагоналей
+                if (min > arr[i][N-1-i]) {
+                    min = arr[i][N-1-i];
                 }
             }
         }
